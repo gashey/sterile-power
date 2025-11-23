@@ -7,9 +7,9 @@
   <title>Sterile Power — Smarter Energy for a Sustainable Future</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Custom Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@
     .hero-bg {
       /* background: linear-gradient(135deg, rgba(146, 131, 99, 0.8), rgba(89, 132, 172, 0.6)),
                     url('assets/img/hero-solar1.png'); */
-      background: url('assets/img/hero-solar2.png');
+      background: url('assets/img/sterile-hero-blue.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -121,18 +121,18 @@
         </a>
 
         <nav class="hidden md:flex items-center gap-8 text-[#293378]">
-          <a href="index.html" class="hover:text-slate-900 transition-smooth">About</a>
+          <a href="index.html" class="hover:text-slate-900 transition-smooth">Home</a>
+          <a href="about.html" class="hover:text-slate-900 transition-smooth">About</a>
           <a href="services.html" class="hover:text-slate-900 transition-smooth">Services</a>
-          <a href="index.html" class="hover:text-slate-900 transition-smooth">Process</a>
           <a href="faq.html" class="hover:text-slate-900 transition-smooth">FAQ</a>
-          <a href="index.html" class="hover:text-slate-900 transition-smooth">Contact</a>
+          <a href="index.html#contact" class="hover:text-slate-900 transition-smooth">Contact</a>
         </nav>
 
         <div class="flex items-center gap-3">
-          <a href="#" class="hidden md:inline-block px-4 py-2 border rounded-lg text-slate-700 hover:bg-slate-100"">Book Consultation</a>
+          <a href="index.html#contact" class="hidden md:inline-block px-4 py-2 border rounded-lg text-slate-700 hover:bg-slate-100"">Book Consultation</a>
 
           <!-- mobile menu button -->
-          <button id="mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 transition-smooth"
+          <button id=" mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 transition-smooth"
             aria-label="Open menu">
             <svg class="w-6 h-6 text-[#293378]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
@@ -145,11 +145,11 @@
     <!-- mobile nav -->
     <div id="mobileNav" class="md:hidden bg-white border-t hidden">
       <div class="px-6 py-4 space-y-2">
-        <a href="index.html" class="block text-slate-700">About</a>
+        <a href="index.html" class="block text-slate-700">Home</a>
+        <a href="about.html" class="block text-slate-700">About</a>
         <a href="services.html" class="block text-slate-700">Services</a>
-        <a href="index.html" class="block text-slate-700">Process</a>
         <a href="faq.html" class="block text-slate-700">FAQ</a>
-        <a href="index.html" class="block text-slate-700">Contact</a>
+        <a href="index.html#contact" class="block text-slate-700">Contact</a>
       </div>
     </div>
   </header>
@@ -157,7 +157,7 @@
   <!-- Hero -->
   <main class="pt-16">
     <!-- Hero Section -->
-    <section class="hero-bg h-[72vh] flex items-center relative overflow-hidden">
+    <section class="hero-bg h-[32vh] flex items-center relative overflow-hidden">
       <canvas id="particle-canvas" class="particle-canvas"></canvas>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -165,71 +165,168 @@
           <!-- Hero Content -->
           <div class="text-white">
             <h1 class="font-display text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center">
-              <span class="typewriter gradient-text">Smarter Energy for a Sustainable Future</span>
+              <span class="typewriter gradient-text">Services</span>
             </h1>
-            <p class="text-xl mb-8 text-gray-200 leading-relaxed text-center">
-              Your trusted partner in renewable energy brokerage, waste-to-power development, carbon credit trading, and
-              sustainable energy procurement across Africa.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="services.html"
-                class="bg-[#48B548] text-white px-4 py-2 rounded-lg font-semibold text-lg text-center">
-                Book Consultation
-              </a>
-              <a href="contact.html"
-                class="border border-white text-white px-4 py-2 rounded-lg font-semibold text-lg text-center hover:bg-white hover:text-gray-800 transition-all">
-                Explore Services
-              </a>
-            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-20">
-      <h2 class="text-4xl font-semibold mb-4 text-center">About Sterile Power</h2>
-      <div class="flex justify-center mb-8">
-        <div class="w-24 h-[0.1rem] bg-[#48B548]"></div>
-      </div>
+    <section class="mx-auto py-12 lg:py-16">
       <div class="flex justify-center">
-        <p class="mb-16 text-slate-500 text-lg max-w-4xl font-semibold text-center">Sterile Power is a downstream energy
-          services provider with allied interests in renewable energy, waste-to-energy projects, carbon credit trading,
-          and energy equipment procurement.
+        <p class="text-slate-500 text-xl max-w-4xl font-semibold text-center">Sterile Power operates across four
+          strategic service areas — each forming a cornerstone of our sustainable energy platform.
         </p>
 
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div class="space-y-4">
-          <!-- <p class="text-slate-600 text-lg">Sterile Power is a downstream energy services provider with allied interests in renewable energy, waste-to-energy projects, carbon credit trading, and energy equipment procurement.</p> -->
-          <p class="text-slate-600 text-lg">We combine market expertise, technical depth, and regulatory insight to
-            deliver projects that accelerate Africa's transition to a low-carbon economy — turning waste into power,
-            emissions into opportunity, and energy systems into sustainable value chains.</p>
-          <p class="text-slate-600 text-lg">Our mission is to make sustainable energy accessible, measurable, and
-            commercially viable for governments, institutions, and private sector clients alike.</p>
-          <p class="text-slate-600 text-lg">With decades of experience in energy trading, project origination, and
-            sustainability finance, Sterile Power stands for integrity, innovation, and measurable impact.</p>
-          <p class="text-slate-600 text-lg">
-            Our mission is to make sustainable energy accessible, measurable, and commercially viable for governments,
-            institutions, and private sector clients alike.
-          </p>
+      <a id="renewable"></a>
+      </section>
+    <!-- Renewable Energy Brokerage -->
+    <section class="mx-auto pb-12 lg:pb-20">
+      <div class="ml-48 flex gap-16">
+        <div class="flex w-1/2">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Renewable Energy Brokerage</h3>
+            <p>Sterile Power brokers reliable, cost-effective renewable energy solutions for organizations seeking to
+              decarbonize operations while controlling energy costs.
+              We provide independent, data-driven guidance through every stage — from strategy to signed contract.</p>
+            <h4 class="font-semibold text-base">Our Services Include:</h4>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Corporate & Virtual Power Purchase Agreements
+                (PPAs):</span><br />Structuring and negotiation
+              of long-term renewable
+              energy contracts tailored to your price, volume, and risk appetite.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Renewable Energy Certificates
+                (RECs):</span><br />Sourcing and managing certified RECs for
+              both compliance and
+              voluntary sustainability programs.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Distributed Generation & On-Site
+                Solar:</span><br />Advisory and implementation support for
+              rooftop, carport, or
+              ground-mounted solar systems.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Battery Energy Storage Advisory:</span><br />Sizing,
+              optimization, and integration of energy
+              storage to maximize
+              savings and resilience.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Energy Risk Management:</span><br />Quantitative
+              analysis and hedging strategies to manage
+              price, basis, and imbalance
+              risks.</p>
+            <h4 class="font-semibold text-base">Why It Matters</h4>
+            <p>We simplify renewable energy procurement — ensuring every transaction is efficient, transparent, and
+              strategically aligned with your sustainability objectives.</p>
+          </div>
         </div>
+        <div class="flex w-1/2">
+          <div class="w-full border border-r-0 border-[#FCAE1A] rounded-l-[2rem] p-4 pr-0 flex items-center">
+            <img src="assets/img/renewable.png" alt="Our Process" class="w-full h-full object-cover rounded-l-[2rem]">
+          </div>
 
-        <div class="hidden lg:block">
-          <img src="assets/img/recycle2.jpeg" alt="Project site" class="w-full object-cover h-[25rem] rounded">
         </div>
       </div>
+<a id="waste"></a>
     </section>
 
-    
+
+    <!-- Waste-to-Energy (W2E) Solutions -->
+     
+    <section class="mx-auto py-12 lg:pb-20">
+      <div class="mr-48 flex gap-16">
+        <div class="flex w-1/2">
+          <div class="w-full border border-l-0 border-[#FCAE1A] rounded-r-[2rem] p-4 pl-0 flex items-center">
+            <img src="assets/img/waste-to-energy.png" alt="Our Process" class="w-full h-full object-cover rounded-r-[2rem]">
+          </div>
+
+        </div>
+        <div class="flex w-1/2 items-start">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Waste-to-Energy (W2E) Solutions</h3>
+            <p>We transform municipal and industrial waste streams into clean, usable energy — helping cities and
+              companies manage waste sustainably while generating electricity and heat.</p>
+            <h4 class="font-semibold text-base">Our W2E Services Include:</h4>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Project Feasibility & Technical
+                Assessment:</span><br />Evaluation of waste feedstock, energy yield potential, and technology
+              suitability.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Technology Integration:</span><br />Matching optimal
+              conversion systems (anaerobic digestion, gasification, or incineration) to specific waste profiles.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Project Structuring &
+                Development:</span><br />Collaboration with municipalities, developers, and financiers to build bankable
+              W2E projects.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Operations & Maintenance
+                Support:</span><br />Advisory for long-term operational performance and environmental compliance.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Circular Economy
+                Integration:</span><br />Integration with recycling and composting programs for maximum environmental
+              benefit.</p>
+            <h4 class="font-semibold text-base">Why It Matters</h4>
+            <p>W2E projects close the loop between waste management and energy supply — reducing landfill pressure,
+              improving sanitation, and generating sustainable electricity.</p>
+          </div>
+        </div>
+      </div>
+<a id="carbon"></a>
+    </section>
+
+    <!-- Carbon Credit Trading & Emissions Advisory -->
+    <section class="mx-auto py-12 lg:pb-20">
+      <div class="ml-48 flex gap-16">
+        <div class="flex w-1/2">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Carbon Credit Trading & Emissions Advisory</h3>
+            <p>Sterile Power empowers clients to participate confidently in the global carbon market — monetizing verified emission reductions and supporting compliance or voluntary offsetting goals.</p>
+            <h4 class="font-semibold text-base">Our Carbon Services Include:</h4>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Carbon Project Development:</span><br />Identification and registration of eligible projects (renewables, W2E, reforestation, cookstove programs).</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;MRV (Measurement, Reporting, Verification):</span><br />Technical assistance to meet Verra (VCS), Gold Standard, and Article 6 criteria.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Carbon Credit Sales & Brokerage:</span><br />Facilitation of carbon credit trades between project developers and buyers globally.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Offsetting Solutions for Organizations:</span><br />Helping companies offset residual emissions through certified, high-integrity credits.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Policy & Market Advisory:</span><br />Advisory for governments and institutions on carbon pricing, trading frameworks, and climate finance.</p>
+            <h4 class="font-semibold text-base">Why It Matters</h4>
+            <p>Carbon markets unlock climate finance for sustainable projects — turning environmental responsibility into a measurable business advantage.</p>
+          </div>
+        </div>
+        <div class="flex w-1/2">
+          <div class="w-full border border-r-0 border-[#FCAE1A] rounded-l-[2rem] p-4 pr-0 flex items-center">
+            <img src="assets/img/carbon-credit.png" alt="Our Process" class="w-full h-full object-cover rounded-l-[2rem]">
+          </div>
+
+        </div>
+      </div>
+<a id="equipment"></a>
+    </section>
+
+
+    <!-- Energy Equipment Supply & Technical Services -->
+    <section class="mx-auto py-12 lg:pb-20">
+      <div class="mr-48 flex gap-16">
+        <div class="flex w-1/2">
+          <div class="w-full border border-l-0 border-[#FCAE1A] rounded-r-[2rem] p-4 pl-0 flex items-center">
+            <img src="assets/img/solar-setup.jpeg" alt="Our Process" class="w-full h-full object-cover rounded-r-[2rem]">
+          </div>
+
+        </div>
+        <div class="flex w-1/2 items-start">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Energy Equipment Supply & Technical Services</h3>
+            <p>Sterile Power provides end-to-end procurement, supply, and servicing for critical energy infrastructure and equipment across renewables and downstream applications.</p>
+            <h4 class="font-semibold text-base">Our Services Include:</h4>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Energy Equipment Procurement:</span><br />Sourcing and supply of solar panels, inverters, turbines, transformers, and energy storage systems.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Installation & Commissioning:</span><br />Technical supervision and installation of energy equipment by certified professionals.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Operations & Maintenance (O&M):</span><br />Lifecycle support to ensure uptime, efficiency, and performance.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Vendor and OEM Partnerships:</span><br />Collaboration with global manufacturers for quality assurance and after-sales support.</p>
+            <p class="ml-8"><span class="font-semibold">&bull;&nbsp;Energy Efficiency & Audit Services:</span><br />Diagnostics and optimization for industries seeking to reduce operational energy costs.</p>
+            <h4 class="font-semibold text-base">Why It Matters</h4>
+            <p>Reliable equipment and expert servicing are foundational to any sustainable energy strategy — ensuring every project performs as designed, long after commissioning.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-[#03070C] text-slate-200 pt-10 pb-4">
+  <footer class="bg-[#181E49] text-slate-200 pt-10 pb-4">
     <!-- <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6"> -->
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around gap-6">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around gap-6">
       <div>
         <div class="font-semibold text-white mb-2">Sterile Power</div>
         <div class="text-sm text-slate-400">Smarter Energy for a Sustainable Future</div>
@@ -237,11 +334,11 @@
       <div class="text-sm text-slate-400">
         <div class="mb-2">Quick Links</div>
         <ul class="space-y-1">
-          <li><a href="#" class="hover:underline">Home</a></li>
-          <li><a href="#" class="hover:underline">About</a></li>
-          <li><a href="#" class="hover:underline">Services</a></li>
-          <li><a href="#" class="hover:underline">Why Choose Us</a></li>
-          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="about.html" class="hover:underline">About</a></li>
+          <li><a href="services.html" class="hover:underline">Services</a></li>
+          <li><a href="index.html" class="hover:underline">Why Choose Us</a></li>
+          <li><a href="index.html" class="hover:underline">Contact</a></li>
         </ul>
       </div>
       <div class="text-sm text-slate-400">
