@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sterile Power — Smarter Energy for a Sustainable Future</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+  <!-- Custom Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Work Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Play CDN (good for prototypes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* custom animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatSlow {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 700ms ease forwards;
+      opacity: 0;
+    }
+
+    .float-slow {
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    body {
+      font-family: 'Karla', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Work Sans', serif;
+    }
+
+    .hero-bg {
+      /* background: linear-gradient(135deg, rgba(146, 131, 99, 0.8), rgba(89, 132, 172, 0.6)),
+                    url('assets/img/hero-solar1.png'); */
+      background: url('assets/img/hero-solar2.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* subtle card shadow */
+    .card-shadow {
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    }
+
+    /* focus ring for accessible keyboard nav */
+    :focus {
+      outline: 2px dashed #6ee7b7;
+      outline-offset: 3px;
+    }
+
+    /* FAQ icon rotate */
+    .faq-toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    /* small transition niceties */
+    .transition-smooth {
+      transition: all 250ms cubic-bezier(.2, .9, .2, 1);
+    }
+  </style>
+</head>
+
+<body class="antialiased text-slate-800 bg-slate-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm fixed w-full z-40">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <!-- <div class="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white font-bold">SP</div> -->
+          <img src="assets/img/sterile-power-logo.png" alt="Sterile Power Logo" class="" />
+          <!-- <span class="font-semibold text-slate-700">Sterile Power</span> -->
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-[#293378]">
+          <a href="index.html" class="hover:text-slate-900 transition-smooth">About</a>
+          <a href="services.html" class="hover:text-slate-900 transition-smooth">Services</a>
+          <a href="index.html" class="hover:text-slate-900 transition-smooth">Process</a>
+          <a href="faq.html" class="hover:text-slate-900 transition-smooth">FAQ</a>
+          <a href="index.html" class="hover:text-slate-900 transition-smooth">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#" class="hidden md:inline-block px-4 py-2 border rounded-lg text-slate-700 hover:bg-slate-100"">Book Consultation</a>
+
+          <!-- mobile menu button -->
+          <button id="mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 transition-smooth"
+            aria-label="Open menu">
+            <svg class="w-6 h-6 text-[#293378]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+            </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="md:hidden bg-white border-t hidden">
+      <div class="px-6 py-4 space-y-2">
+        <a href="index.html" class="block text-slate-700">About</a>
+        <a href="services.html" class="block text-slate-700">Services</a>
+        <a href="index.html" class="block text-slate-700">Process</a>
+        <a href="faq.html" class="block text-slate-700">FAQ</a>
+        <a href="index.html" class="block text-slate-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="hero-bg h-[72vh] flex items-center relative overflow-hidden">
+      <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col justify-center items-center">
+          <!-- Hero Content -->
+          <div class="text-white">
+            <h1 class="font-display text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center">
+              <span class="typewriter gradient-text">Smarter Energy for a Sustainable Future</span>
+            </h1>
+            <p class="text-xl mb-8 text-gray-200 leading-relaxed text-center">
+              Your trusted partner in renewable energy brokerage, waste-to-power development, carbon credit trading, and
+              sustainable energy procurement across Africa.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="services.html"
+                class="bg-[#48B548] text-white px-4 py-2 rounded-lg font-semibold text-lg text-center">
+                Book Consultation
+              </a>
+              <a href="contact.html"
+                class="border border-white text-white px-4 py-2 rounded-lg font-semibold text-lg text-center hover:bg-white hover:text-gray-800 transition-all">
+                Explore Services
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-slate-50 py-10">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-4xl font-semibold mb-4 text-center">Frequently Asked Questions</h2>
+      <div class="flex justify-center mb-8">
+        <div class="w-24 h-[0.1rem] bg-[#48B548]"></div>
+      </div>
+
+        <div class="space-y-3">
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">What's the difference between a physical and virtual PPA?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              A physical PPA involves the actual delivery of energy to a buyer's site while a virtual PPA is a financial
+              contract that settles the difference between market prices and agreed prices.
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">How long does a renewable energy procurement process take?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              Timelines vary, but typical procurement cycles range from 6 - 18 months depending on scale, approvals and
+              financing.
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">What types of waste can be used for energy generation?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              Municipal solid waste, agricultural residues, some types of industrial waste and biogas feedstocks can be
+              used depending on technology choice.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#03070C] text-slate-200 pt-10 pb-4">
+    <!-- <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6"> -->
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around gap-6">
+      <div>
+        <div class="font-semibold text-white mb-2">Sterile Power</div>
+        <div class="text-sm text-slate-400">Smarter Energy for a Sustainable Future</div>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div class="mb-2">Quick Links</div>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Services</a></li>
+          <li><a href="#" class="hover:underline">Why Choose Us</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div class="mb-2">Services</div>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Renewable Energy Brokerage</a></li>
+          <li><a href="#" class="hover:underline">Waste-to-Energy Solutions</a></li>
+          <li><a href="#" class="hover:underline">Carbon Credit Trading</a></li>
+          <li><a href="#" class="hover:underline">Equipment Supply</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div class="mb-2">Contact Info</div>
+        <div>hi@sterile-power.com</div>
+        <div class="mt-1">+233 24 244 388 818</div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto border-t border-slate-600 pt-4 text-slate-400 mt-6">
+      <p class="text-center">&copy; 2025 Sterile Power. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- small scripts for interactivity -->
+  <script>
+    // mobile nav toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // close other open items (simple single-open behavior)
+        document.querySelectorAll('.faq-toggle').forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            other.closest('div').querySelector('.faq-panel').classList.add('hidden');
+          }
+        });
+
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const panel = btn.closest('div').querySelector('.faq-panel');
+        if (expanded) {
+          panel.classList.add('hidden');
+        } else {
+          panel.classList.remove('hidden');
+        }
+      });
+    });
+
+    // add simple fade-in-up on scroll
+    const fadeEls = document.querySelectorAll('.fade-in-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = 1;
+          e.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+
+</html>
