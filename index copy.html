@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sterile Power — Smarter Energy for a Sustainable Future</title>
+
+  <!-- Tailwind Play CDN (good for prototypes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* custom animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    .fade-in-up { animation: fadeInUp 700ms ease forwards; opacity: 0; }
+    .float-slow { animation: floatSlow 4s ease-in-out infinite; }
+
+    /* hero overlay gradient for better text contrast */
+    .hero-bg {
+      background-image:
+        linear-gradient(rgba(6,10,15,0.55), rgba(6,10,15,0.55)),
+        url('/mnt/data/77263cb7-c5ea-4e2b-9d9b-6ad5d9632c1e.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* subtle card shadow */
+    .card-shadow { box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06); }
+
+    /* focus ring for accessible keyboard nav */
+    :focus { outline: 2px dashed #6ee7b7; outline-offset: 3px; }
+
+    /* FAQ icon rotate */
+    .faq-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    /* small transition niceties */
+    .transition-smooth { transition: all 250ms cubic-bezier(.2,.9,.2,1); }
+  </style>
+</head>
+<body class="antialiased text-slate-800 bg-slate-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm fixed w-full z-40">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white font-bold">SP</div>
+          <span class="font-semibold text-slate-700">Sterile Power</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-600">
+          <a href="#" class="hover:text-slate-900 transition-smooth">About</a>
+          <a href="#" class="hover:text-slate-900 transition-smooth">Services</a>
+          <a href="#" class="hover:text-slate-900 transition-smooth">Process</a>
+          <a href="#" class="hover:text-slate-900 transition-smooth">FAQ</a>
+          <a href="#" class="hover:text-slate-900 transition-smooth">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#" class="hidden md:inline-block px-4 py-2 border rounded-lg text-sm text-slate-700 hover:bg-slate-100">Book Consultation</a>
+
+          <!-- mobile menu button -->
+          <button id="mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 transition-smooth" aria-label="Open menu">
+            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="md:hidden bg-white border-t hidden">
+      <div class="px-6 py-4 space-y-2">
+        <a href="#" class="block text-slate-700">About</a>
+        <a href="#" class="block text-slate-700">Services</a>
+        <a href="#" class="block text-slate-700">Process</a>
+        <a href="#" class="block text-slate-700">FAQ</a>
+        <a href="#" class="block text-slate-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="pt-16">
+    <section class="hero-bg h-[72vh] min-h-[520px] flex items-center">
+      <div class="max-w-7xl mx-auto w-full px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="text-white lg:pr-12">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight fade-in-up" style="animation-delay: 120ms;">
+              Smarter Energy for a Sustainable Future
+            </h1>
+            <p class="mt-4 max-w-2xl text-slate-100 opacity-90 fade-in-up" style="animation-delay: 220ms;">
+              Your trusted partner in renewable energy technology, waste-to-power projects, carbon credit trading and sustainable energy procurement.
+            </p>
+
+            <div class="flex gap-3 mt-6 fade-in-up" style="animation-delay: 360ms;">
+              <a href="#" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 transition-smooth text-white px-4 py-2 rounded shadow">
+                Book Consultation
+              </a>
+              <a href="#" class="inline-flex items-center gap-2 border border-white/30 text-white px-4 py-2 rounded hover:bg-white/10 transition-smooth">
+                Explore Services
+              </a>
+            </div>
+          </div>
+
+          <!-- small hero visual (floating card) -->
+          <div class="hidden lg:flex justify-end">
+            <div class="w-[420px] bg-white/10 border border-white/20 rounded-2xl p-5 card-shadow float-slow">
+              <div class="text-xs text-white/80">Live Dashboard</div>
+              <h3 class="text-white font-semibold mt-2">Solar + Wind Portfolio</h3>
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <div class="bg-white/6 p-3 rounded"><div class="text-xs text-white/90">Installed Capacity</div><div class="text-white font-bold text-lg">12.5 MW</div></div>
+                <div class="bg-white/6 p-3 rounded"><div class="text-xs text-white/90">CO₂ Savings</div><div class="text-white font-bold text-lg">8.3k t/yr</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-semibold mb-4">About Sterile Power</h2>
+          <p class="text-slate-600">
+            Sterile Power is a downstream energy services provider with deep expertise in renewable energy, waste-to-energy projects,
+            carbon credit trading, and energy equipment procurement. We combine market expertise, technical depth, and regulatory insight
+            to deliver projects that accelerate the transition to a low-carbon economy.
+          </p>
+
+          <p class="mt-4 text-slate-600">
+            Our mission is to make sustainable energy accessible, measurable, and commercially viable for governments, institutions, and private sector clients alike.
+          </p>
+        </div>
+
+        <div class="hidden lg:block">
+          <img src="/mnt/data/6877537a-aabf-4570-a6dc-490bf8c0c77b.png" alt="Project site" class="w-full rounded-lg object-cover h-44 card-shadow">
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="bg-white py-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h3 class="text-center text-xl font-semibold mb-2">Our Mission & Values</h3>
+        <p class="text-center text-slate-500 text-sm max-w-2xl mx-auto">To accelerate the transition to a climate-resilient energy future by connecting technology, finance, and policy through market-based solutions that deliver measurable value.</p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-slate-50 p-6 rounded-lg card-shadow fade-in-up" style="animation-delay:80ms;">
+            <div class="text-green-600 mb-3">🔒</div>
+            <h4 class="font-semibold mb-2">Integrity</h4>
+            <p class="text-sm text-slate-600">We operate transparently with clients, regulators and partners.</p>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg card-shadow fade-in-up" style="animation-delay:160ms;">
+            <div class="text-green-600 mb-3">💡</div>
+            <h4 class="font-semibold mb-2">Innovation</h4>
+            <p class="text-sm text-slate-600">We apply forward-looking technologies and methods to traditional energy challenges.</p>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg card-shadow fade-in-up" style="animation-delay:240ms;">
+            <div class="text-green-600 mb-3">🌱</div>
+            <h4 class="font-semibold mb-2">Sustainability</h4>
+            <p class="text-sm text-slate-600">We prioritize projects that balance environmental and social returns.</p>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg card-shadow fade-in-up" style="animation-delay:320ms;">
+            <div class="text-green-600 mb-3">⚙️</div>
+            <h4 class="font-semibold mb-2">Expertise</h4>
+            <p class="text-sm text-slate-600">Our multidisciplinary team brings real-world energy market experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <h3 class="text-center text-xl font-semibold mb-6">Our Services</h3>
+      <p class="text-center text-slate-500 max-w-2xl mx-auto text-sm">We combine market expertise, technical depth, and regulatory insight to deliver projects that accelerate Africa's transition to a low-carbon economy.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="bg-white p-6 rounded-lg card-shadow hover:scale-[1.01] transition-smooth">
+          <div class="text-green-600 mb-3 text-2xl">🔋</div>
+          <h4 class="font-semibold">Renewable Energy Brokerage</h4>
+          <p class="text-sm text-slate-600 mt-2">Independent, data-driven guidance for corporate and institutional procurement.</p>
+        </article>
+
+        <article class="bg-white p-6 rounded-lg card-shadow hover:scale-[1.01] transition-smooth">
+          <div class="text-green-600 mb-3 text-2xl">♻️</div>
+          <h4 class="font-semibold">Waste-to-Energy Solutions</h4>
+          <p class="text-sm text-slate-600 mt-2">Transform industrial and municipal waste streams into reliable energy and value.</p>
+        </article>
+
+        <article class="bg-white p-6 rounded-lg card-shadow hover:scale-[1.01] transition-smooth">
+          <div class="text-green-600 mb-3 text-2xl">📈</div>
+          <h4 class="font-semibold">Carbon Credit Trading</h4>
+          <p class="text-sm text-slate-600 mt-2">Participation in voluntary carbon markets and monetization advisory.</p>
+        </article>
+
+        <article class="bg-white p-6 rounded-lg card-shadow hover:scale-[1.01] transition-smooth">
+          <div class="text-green-600 mb-3 text-2xl">🔧</div>
+          <h4 class="font-semibold">Energy Equipment Supply</h4>
+          <p class="text-sm text-slate-600 mt-2">End-to-end procurement and supply of renewable infrastructure and components.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="bg-white py-10">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <h3 class="text-center text-lg font-semibold mb-6">Our Process</h3>
+        <div class="flex items-center gap-4 justify-between">
+          <!-- Steps -->
+          <div class="flex-1">
+            <ol class="flex items-center justify-between gap-4 text-xs text-slate-600">
+              <li class="flex-1 text-center">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full mx-auto flex items-center justify-center">1</div>
+                <div class="mt-2">Discovery</div>
+              </li>
+              <li class="flex-1 text-center">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full mx-auto flex items-center justify-center">2</div>
+                <div class="mt-2">Assessment</div>
+              </li>
+              <li class="flex-1 text-center">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full mx-auto flex items-center justify-center">3</div>
+                <div class="mt-2">Structuring</div>
+              </li>
+              <li class="flex-1 text-center">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full mx-auto flex items-center justify-center">4</div>
+                <div class="mt-2">Execution</div>
+              </li>
+              <li class="flex-1 text-center">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full mx-auto flex items-center justify-center">5</div>
+                <div class="mt-2">Monitoring</div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <h3 class="text-center text-xl font-semibold mb-6">Why Choose Sterile Power</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h4 class="font-semibold">Integrated Expertise</h4>
+          <p class="text-sm text-slate-600 mt-2">Comprehensive knowledge across renewables, waste-to-energy, and carbon markets.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h4 class="font-semibold">Transparent Advice</h4>
+          <p class="text-sm text-slate-600 mt-2">Vendor-agnostic recommendations built on measurable outcomes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h4 class="font-semibold">Strong Partnerships</h4>
+          <p class="text-sm text-slate-600 mt-2">Established relationships with developers and governments across Africa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-slate-50 py-10">
+      <div class="max-w-3xl mx-auto px-6">
+        <h3 class="text-center text-lg font-semibold mb-6">Frequently Asked Questions</h3>
+
+        <div class="space-y-3">
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">What's the difference between a physical and virtual PPA?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              A physical PPA involves the actual delivery of energy to a buyer's site while a virtual PPA is a financial contract that settles the difference between market prices and agreed prices.
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">How long does a renewable energy procurement process take?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              Timelines vary, but typical procurement cycles range from 6 - 18 months depending on scale, approvals and financing.
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <button class="w-full text-left faq-toggle flex items-center justify-between" aria-expanded="false">
+              <span class="font-medium">What types of waste can be used for energy generation?</span>
+              <svg class="w-5 h-5 transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-panel mt-3 text-slate-600 hidden">
+              Municipal solid waste, agricultural residues, some types of industrial waste and biogas feedstocks can be used depending on technology choice.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+      <h3 class="text-center text-xl font-semibold mb-4">Contact Us</h3>
+      <p class="text-center text-slate-500 mb-6">Free Consultation — Let's Power a Cleaner Future Together</p>
+
+      <form class="bg-white p-6 rounded-lg card-shadow grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input class="border rounded px-3 py-2" placeholder="Company / Institution" />
+          <input class="border rounded px-3 py-2" placeholder="Contact Name" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input class="border rounded px-3 py-2" placeholder="Email" type="email" />
+          <input class="border rounded px-3 py-2" placeholder="Phone" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <select class="border rounded px-3 py-2">
+            <option>Project Type</option>
+            <option>Rooftop Solar</option>
+            <option>Utility Scale</option>
+            <option>Waste-to-Energy</option>
+          </select>
+          <input class="border rounded px-3 py-2" placeholder="Estimated Load / Project Size" />
+        </div>
+
+        <textarea rows="5" placeholder="Message" class="border rounded px-3 py-2"></textarea>
+
+        <div class="flex gap-3">
+          <button type="submit" class="bg-green-600 px-4 py-2 rounded text-white">Book a Consultation</button>
+          <button type="button" class="border px-4 py-2 rounded">Request Project Assessment</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-200 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <div class="font-semibold text-white mb-2">Sterile Power</div>
+        <div class="text-sm text-slate-400">Smarter Energy for a Sustainable Future</div>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div class="mb-2">Quick Links</div>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Services</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div class="mb-2">Contact Info</div>
+        <div>hi@sterile-energies.co</div>
+        <div class="mt-1">+1 (555) 123-4567</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- small scripts for interactivity -->
+  <script>
+    // mobile nav toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // close other open items (simple single-open behavior)
+        document.querySelectorAll('.faq-toggle').forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            other.closest('div').querySelector('.faq-panel').classList.add('hidden');
+          }
+        });
+
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const panel = btn.closest('div').querySelector('.faq-panel');
+        if (expanded) {
+          panel.classList.add('hidden');
+        } else {
+          panel.classList.remove('hidden');
+        }
+      });
+    });
+
+    // add simple fade-in-up on scroll
+    const fadeEls = document.querySelectorAll('.fade-in-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = 1;
+          e.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
